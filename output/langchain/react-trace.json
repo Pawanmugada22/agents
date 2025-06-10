@@ -1,0 +1,1899 @@
+{
+    "spans": [
+        {
+            "name": "RunnableSequence_1",
+            "context": {
+                "span_id": "cf15663966f5f34b",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": null,
+            "start_time": 1749468163356237152,
+            "end_time": 1749468167456463280,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "\"I'm in chennai suggest a drink and snacks\"",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"output\": \"I recommend fruit juice and banana for you in Chennai.\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_1",
+            "context": {
+                "span_id": "fb59ed812f3cc3f6",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "cf15663966f5f34b",
+            "start_time": 1749468163358467653,
+            "end_time": 1749468163360026571,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "\"I'm in chennai suggest a drink and snacks\"",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "AgentExecutor",
+            "context": {
+                "span_id": "27541c31e005bd9a",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "cf15663966f5f34b",
+            "start_time": 1749468163361312475,
+            "end_time": 1749468167455763363,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\"}",
+                "mlflow.spanOutputs": "{\"output\": \"I recommend fruit juice and banana for you in Chennai.\"}"
+            },
+            "events": [
+                {
+                    "name": "agent_action",
+                    "timestamp": 1749468164534645,
+                    "attributes": {
+                        "tool": "get_weather",
+                        "tool_input": "\"chennai\"",
+                        "log": "Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\n\nAction: get_weather\nAction Input: chennai"
+                    }
+                },
+                {
+                    "name": "agent_action",
+                    "timestamp": 1749468165536243,
+                    "attributes": {
+                        "tool": "get_temperature",
+                        "tool_input": "\"chennai\"",
+                        "log": "Thought: I need the temperature to recommend a drink.\n\nAction: get_temperature\nAction Input: chennai"
+                    }
+                },
+                {
+                    "name": "agent_action",
+                    "timestamp": 1749468166388920,
+                    "attributes": {
+                        "tool": "get_drink",
+                        "tool_input": "\"sunny, 40\"",
+                        "log": "Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \n\nAction: get_drink\nAction Input: sunny, 40"
+                    }
+                },
+                {
+                    "name": "agent_action",
+                    "timestamp": 1749468166980225,
+                    "attributes": {
+                        "tool": "get_snacks",
+                        "tool_input": "\"fruit juice\"",
+                        "log": "Action: get_snacks\nAction Input: fruit juice"
+                    }
+                },
+                {
+                    "name": "agent_finish",
+                    "timestamp": 1749468167455397,
+                    "attributes": {
+                        "return_values": "{\"output\": \"I recommend fruit juice and banana for you in Chennai.\"}",
+                        "log": "Final Answer: I recommend fruit juice and banana for you in Chennai. \n"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "RunnableSequence_2",
+            "context": {
+                "span_id": "0d6bf62fefe30aae",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468163363047862,
+            "end_time": 1749468164534251186,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": []}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableAssign<agent_scratchpad>_1",
+            "context": {
+                "span_id": "2fd322380bc82c07",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "0d6bf62fefe30aae",
+            "start_time": 1749468163368578466,
+            "end_time": 1749468163376706765,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": []}",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [], \"agent_scratchpad\": \"\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableParallel<agent_scratchpad>_1",
+            "context": {
+                "span_id": "6b6ca0d080867cd6",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "2fd322380bc82c07",
+            "start_time": 1749468163371467857,
+            "end_time": 1749468163376296561,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": []}",
+                "mlflow.spanOutputs": "{\"agent_scratchpad\": \"\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_2",
+            "context": {
+                "span_id": "9a5b14564c737698",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "6b6ca0d080867cd6",
+            "start_time": 1749468163374654195,
+            "end_time": 1749468163375769911,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": []}",
+                "mlflow.spanOutputs": "\"\""
+            },
+            "events": []
+        },
+        {
+            "name": "PromptTemplate_1",
+            "context": {
+                "span_id": "e15c34ee8b3254eb",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "0d6bf62fefe30aae",
+            "start_time": 1749468163378064221,
+            "end_time": 1749468163378963207,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [], \"agent_scratchpad\": \"\"}",
+                "mlflow.spanOutputs": "{\"text\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\n\\n\\n\", \"type\": \"StringPromptValue\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "ChatGroq_1",
+            "context": {
+                "span_id": "57bb8d41e8e43a66",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "0d6bf62fefe30aae",
+            "start_time": 1749468163380063946,
+            "end_time": 1749468164527066791,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAT_MODEL\"",
+                "invocation_params": "{\"_type\": \"groq-chat\", \"stop\": [\"\\nObservation\"]}",
+                "options": "{\"stop\": [\"\\nObservation\"]}",
+                "batch_size": "1",
+                "metadata": "{\"ls_provider\": \"groq\", \"ls_model_name\": \"gemma2-9b-it\", \"ls_model_type\": \"chat\", \"ls_temperature\": 0.7, \"ls_stop\": [\"\\nObservation\"]}",
+                "mlflow.spanInputs": "[[{\"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\n\\n\\n\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": null, \"example\": false}]]",
+                "mlflow.chat.messages": "[{\"role\": \"user\", \"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\n\\n\\n\"}, {\"role\": \"assistant\", \"content\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\"}]",
+                "mlflow.spanOutputs": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"content\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\"}, \"text\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\"}]], \"llm_output\": null, \"run\": null, \"type\": \"LLMResult\"}"
+            },
+            "events": [
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164212395,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164213950,
+                    "attributes": {
+                        "token": "Thought",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Thought\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164215316,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164216122,
+                    "attributes": {
+                        "token": " I",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" I\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164217913,
+                    "attributes": {
+                        "token": " need",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" need\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164218951,
+                    "attributes": {
+                        "token": " to",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" to\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164219735,
+                    "attributes": {
+                        "token": " get",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" get\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164220610,
+                    "attributes": {
+                        "token": " the",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" the\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164221416,
+                    "attributes": {
+                        "token": " weather",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" weather\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164222041,
+                    "attributes": {
+                        "token": " and",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" and\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164222967,
+                    "attributes": {
+                        "token": " temperature",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" temperature\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164223715,
+                    "attributes": {
+                        "token": " for",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" for\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164224459,
+                    "attributes": {
+                        "token": " Chennai",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Chennai\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164225242,
+                    "attributes": {
+                        "token": " to",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" to\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164226769,
+                    "attributes": {
+                        "token": " recommend",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" recommend\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164227661,
+                    "attributes": {
+                        "token": " a",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" a\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164228393,
+                    "attributes": {
+                        "token": " drink",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" drink\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164229060,
+                    "attributes": {
+                        "token": " and",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" and\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164229728,
+                    "attributes": {
+                        "token": " snacks",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" snacks\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164230330,
+                    "attributes": {
+                        "token": ".",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \".\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164231012,
+                    "attributes": {
+                        "token": "\n\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164231664,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164232230,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164232922,
+                    "attributes": {
+                        "token": " get",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" get\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164233475,
+                    "attributes": {
+                        "token": "_",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"_\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164234152,
+                    "attributes": {
+                        "token": "weather",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"weather\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164234691,
+                    "attributes": {
+                        "token": "\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164235261,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164235826,
+                    "attributes": {
+                        "token": " Input",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Input\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164236299,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164236917,
+                    "attributes": {
+                        "token": " ch",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" ch\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164237433,
+                    "attributes": {
+                        "token": "ennai",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"ennai\", \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164524919,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"usage_metadata\": {\"input_tokens\": 248, \"output_tokens\": 172, \"total_tokens\": 420}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReActSingleInputOutputParser_1",
+            "context": {
+                "span_id": "1dbc192c120aa0d2",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "0d6bf62fefe30aae",
+            "start_time": 1749468164530618487,
+            "end_time": 1749468164533764655,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"content\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--32a41aaf-ddba-4289-9ac0-2f5d5a9374ad\", \"example\": false, \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 248, \"output_tokens\": 172, \"total_tokens\": 420}, \"tool_call_chunks\": []}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "get_weather",
+            "context": {
+                "span_id": "7b1eda6da3860ff9",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468164538786339,
+            "end_time": 1749468164542297003,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"TOOL\"",
+                "color": "\"green\"",
+                "mlflow.spanInputs": "\"chennai\"",
+                "mlflow.spanOutputs": "\"It's sunny in chennai!\""
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableSequence_3",
+            "context": {
+                "span_id": "7a97a5429bd8671b",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468164547330444,
+            "end_time": 1749468165535609938,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]]}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableAssign<agent_scratchpad>_2",
+            "context": {
+                "span_id": "6616ad22e310b5c7",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "7a97a5429bd8671b",
+            "start_time": 1749468164553573950,
+            "end_time": 1749468164579566947,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]]}",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableParallel<agent_scratchpad>_2",
+            "context": {
+                "span_id": "599bbeda196e1f97",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "6616ad22e310b5c7",
+            "start_time": 1749468164560561162,
+            "end_time": 1749468164575717197,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]]}",
+                "mlflow.spanOutputs": "{\"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_3",
+            "context": {
+                "span_id": "f7c915ebb86a2f08",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "599bbeda196e1f97",
+            "start_time": 1749468164568471406,
+            "end_time": 1749468164573757672,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]]}",
+                "mlflow.spanOutputs": "\"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \""
+            },
+            "events": []
+        },
+        {
+            "name": "PromptTemplate_2",
+            "context": {
+                "span_id": "93578f7212b54f26",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "7a97a5429bd8671b",
+            "start_time": 1749468164581558348,
+            "end_time": 1749468164583090130,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \"}",
+                "mlflow.spanOutputs": "{\"text\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \\n\\n\", \"type\": \"StringPromptValue\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "ChatGroq_2",
+            "context": {
+                "span_id": "3296bb11e590551c",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "7a97a5429bd8671b",
+            "start_time": 1749468164584620752,
+            "end_time": 1749468165525528335,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAT_MODEL\"",
+                "invocation_params": "{\"_type\": \"groq-chat\", \"stop\": [\"\\nObservation\"]}",
+                "options": "{\"stop\": [\"\\nObservation\"]}",
+                "batch_size": "1",
+                "metadata": "{\"ls_provider\": \"groq\", \"ls_model_name\": \"gemma2-9b-it\", \"ls_model_type\": \"chat\", \"ls_temperature\": 0.7, \"ls_stop\": [\"\\nObservation\"]}",
+                "mlflow.spanInputs": "[[{\"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \\n\\n\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": null, \"example\": false}]]",
+                "mlflow.chat.messages": "[{\"role\": \"user\", \"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: \\n\\n\"}, {\"role\": \"assistant\", \"content\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\"}]",
+                "mlflow.spanOutputs": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"content\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\"}, \"text\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\"}]], \"llm_output\": null, \"run\": null, \"type\": \"LLMResult\"}"
+            },
+            "events": [
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164976607,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164997893,
+                    "attributes": {
+                        "token": "Thought",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Thought\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468164999277,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165000068,
+                    "attributes": {
+                        "token": " I",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" I\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165000732,
+                    "attributes": {
+                        "token": " need",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" need\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165001401,
+                    "attributes": {
+                        "token": " the",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" the\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165006869,
+                    "attributes": {
+                        "token": " temperature",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" temperature\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165007982,
+                    "attributes": {
+                        "token": " to",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" to\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165013331,
+                    "attributes": {
+                        "token": " recommend",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" recommend\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165014526,
+                    "attributes": {
+                        "token": " a",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" a\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165017838,
+                    "attributes": {
+                        "token": " drink",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" drink\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165018915,
+                    "attributes": {
+                        "token": ".",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \".\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165019851,
+                    "attributes": {
+                        "token": "\n\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165020633,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165021280,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165021929,
+                    "attributes": {
+                        "token": " get",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" get\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165023022,
+                    "attributes": {
+                        "token": "_",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"_\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165023869,
+                    "attributes": {
+                        "token": "temperature",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"temperature\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165024534,
+                    "attributes": {
+                        "token": "\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165031239,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165033935,
+                    "attributes": {
+                        "token": " Input",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Input\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165034718,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165035695,
+                    "attributes": {
+                        "token": " ch",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" ch\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165036395,
+                    "attributes": {
+                        "token": "ennai",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"ennai\", \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165522884,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"usage_metadata\": {\"input_tokens\": 295, \"output_tokens\": 136, \"total_tokens\": 431}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReActSingleInputOutputParser_2",
+            "context": {
+                "span_id": "45a07803612959b8",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "7a97a5429bd8671b",
+            "start_time": 1749468165530651499,
+            "end_time": 1749468165534853387,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"content\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--4da023a9-1bc6-4673-86a0-3b7f5bf930a9\", \"example\": false, \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 295, \"output_tokens\": 136, \"total_tokens\": 431}, \"tool_call_chunks\": []}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "get_temperature",
+            "context": {
+                "span_id": "6e5aa0ec63ab0b44",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468165539911149,
+            "end_time": 1749468165541371970,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"TOOL\"",
+                "color": "\"green\"",
+                "mlflow.spanInputs": "\"chennai\"",
+                "mlflow.spanOutputs": "40"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableSequence_4",
+            "context": {
+                "span_id": "74299e6a174c9e17",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468165546454151,
+            "end_time": 1749468166388638084,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]]}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableAssign<agent_scratchpad>_3",
+            "context": {
+                "span_id": "2c6fa1e1caf0469a",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "74299e6a174c9e17",
+            "start_time": 1749468165554752301,
+            "end_time": 1749468165569987786,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]]}",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableParallel<agent_scratchpad>_3",
+            "context": {
+                "span_id": "8d3e0a08e45c4289",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "2c6fa1e1caf0469a",
+            "start_time": 1749468165560144812,
+            "end_time": 1749468165568823057,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]]}",
+                "mlflow.spanOutputs": "{\"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_4",
+            "context": {
+                "span_id": "a773bbbdc86054d1",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "8d3e0a08e45c4289",
+            "start_time": 1749468165565017400,
+            "end_time": 1749468165567533184,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]]}",
+                "mlflow.spanOutputs": "\"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \""
+            },
+            "events": []
+        },
+        {
+            "name": "PromptTemplate_3",
+            "context": {
+                "span_id": "3fea12f0a469ac35",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "74299e6a174c9e17",
+            "start_time": 1749468165572152862,
+            "end_time": 1749468165573622919,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \"}",
+                "mlflow.spanOutputs": "{\"text\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \\n\\n\", \"type\": \"StringPromptValue\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "ChatGroq_3",
+            "context": {
+                "span_id": "da8a8c626a633a05",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "74299e6a174c9e17",
+            "start_time": 1749468165575349632,
+            "end_time": 1749468166375890525,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAT_MODEL\"",
+                "invocation_params": "{\"_type\": \"groq-chat\", \"stop\": [\"\\nObservation\"]}",
+                "options": "{\"stop\": [\"\\nObservation\"]}",
+                "batch_size": "1",
+                "metadata": "{\"ls_provider\": \"groq\", \"ls_model_name\": \"gemma2-9b-it\", \"ls_model_type\": \"chat\", \"ls_temperature\": 0.7, \"ls_stop\": [\"\\nObservation\"]}",
+                "mlflow.spanInputs": "[[{\"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \\n\\n\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": null, \"example\": false}]]",
+                "mlflow.chat.messages": "[{\"role\": \"user\", \"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: \\n\\n\"}, {\"role\": \"assistant\", \"content\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\"}]",
+                "mlflow.spanOutputs": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"content\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\"}, \"text\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\"}]], \"llm_output\": null, \"run\": null, \"type\": \"LLMResult\"}"
+            },
+            "events": [
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165980660,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165984115,
+                    "attributes": {
+                        "token": "Thought",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Thought\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165985112,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165985855,
+                    "attributes": {
+                        "token": " It",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" It\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165986860,
+                    "attributes": {
+                        "token": "'",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"'\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165987546,
+                    "attributes": {
+                        "token": "s",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"s\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165988402,
+                    "attributes": {
+                        "token": " sunny",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" sunny\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165989121,
+                    "attributes": {
+                        "token": " and",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" and\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165989837,
+                    "attributes": {
+                        "token": " hot",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" hot\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165990985,
+                    "attributes": {
+                        "token": " in",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" in\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165992833,
+                    "attributes": {
+                        "token": " Chennai",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Chennai\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165993922,
+                    "attributes": {
+                        "token": ",",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \",\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165995246,
+                    "attributes": {
+                        "token": " so",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" so\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165996265,
+                    "attributes": {
+                        "token": " a",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" a\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165997007,
+                    "attributes": {
+                        "token": " cold",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" cold\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165997816,
+                    "attributes": {
+                        "token": " drink",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" drink\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468165998924,
+                    "attributes": {
+                        "token": " would",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" would\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166000069,
+                    "attributes": {
+                        "token": " be",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" be\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166000978,
+                    "attributes": {
+                        "token": " refreshing",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" refreshing\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166001619,
+                    "attributes": {
+                        "token": ".",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \".\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166002454,
+                    "attributes": {
+                        "token": " ",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" \", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166003159,
+                    "attributes": {
+                        "token": "\n\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166003766,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166004808,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166006738,
+                    "attributes": {
+                        "token": " get",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" get\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166007740,
+                    "attributes": {
+                        "token": "_",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"_\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166008770,
+                    "attributes": {
+                        "token": "drink",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"drink\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166009460,
+                    "attributes": {
+                        "token": "\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166010298,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166011193,
+                    "attributes": {
+                        "token": " Input",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Input\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166012076,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166012696,
+                    "attributes": {
+                        "token": " sunny",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" sunny\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166013298,
+                    "attributes": {
+                        "token": ",",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \",\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166013876,
+                    "attributes": {
+                        "token": " ",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" \", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166014496,
+                    "attributes": {
+                        "token": "4",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"4\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166015046,
+                    "attributes": {
+                        "token": "0",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"0\", \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166370602,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"usage_metadata\": {\"input_tokens\": 327, \"output_tokens\": 118, \"total_tokens\": 445}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReActSingleInputOutputParser_3",
+            "context": {
+                "span_id": "42c4c013bf3a7e50",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "74299e6a174c9e17",
+            "start_time": 1749468166380456789,
+            "end_time": 1749468166387569363,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"content\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--5cabe1e9-f281-4d96-ae6b-aad0f7785273\", \"example\": false, \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 327, \"output_tokens\": 118, \"total_tokens\": 445}, \"tool_call_chunks\": []}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "get_drink",
+            "context": {
+                "span_id": "5a7cba46eb3ee39c",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468166394842916,
+            "end_time": 1749468166400426622,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"TOOL\"",
+                "color": "\"green\"",
+                "mlflow.spanInputs": "\"sunny, 40\"",
+                "mlflow.spanOutputs": "\"fruit juice\""
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableSequence_5",
+            "context": {
+                "span_id": "b2d1b3ce675b5b6b",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468166404740881,
+            "end_time": 1749468166980003896,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]]}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableAssign<agent_scratchpad>_4",
+            "context": {
+                "span_id": "a8caa4ee761b9259",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "b2d1b3ce675b5b6b",
+            "start_time": 1749468166411490084,
+            "end_time": 1749468166429758045,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]]}",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableParallel<agent_scratchpad>_4",
+            "context": {
+                "span_id": "4cf9c615f65dd3c2",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "a8caa4ee761b9259",
+            "start_time": 1749468166417511885,
+            "end_time": 1749468166428167710,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]]}",
+                "mlflow.spanOutputs": "{\"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_5",
+            "context": {
+                "span_id": "1a457084f2217a22",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "4cf9c615f65dd3c2",
+            "start_time": 1749468166423063249,
+            "end_time": 1749468166426632392,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]]}",
+                "mlflow.spanOutputs": "\"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \""
+            },
+            "events": []
+        },
+        {
+            "name": "PromptTemplate_4",
+            "context": {
+                "span_id": "a621f59892d09a5a",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "b2d1b3ce675b5b6b",
+            "start_time": 1749468166431956870,
+            "end_time": 1749468166433501739,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \"}",
+                "mlflow.spanOutputs": "{\"text\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \\n\\n\", \"type\": \"StringPromptValue\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "ChatGroq_4",
+            "context": {
+                "span_id": "0775e6dd958ef3b3",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "b2d1b3ce675b5b6b",
+            "start_time": 1749468166435144695,
+            "end_time": 1749468166965157951,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAT_MODEL\"",
+                "invocation_params": "{\"_type\": \"groq-chat\", \"stop\": [\"\\nObservation\"]}",
+                "options": "{\"stop\": [\"\\nObservation\"]}",
+                "batch_size": "1",
+                "metadata": "{\"ls_provider\": \"groq\", \"ls_model_name\": \"gemma2-9b-it\", \"ls_model_type\": \"chat\", \"ls_temperature\": 0.7, \"ls_stop\": [\"\\nObservation\"]}",
+                "mlflow.spanInputs": "[[{\"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \\n\\n\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": null, \"example\": false}]]",
+                "mlflow.chat.messages": "[{\"role\": \"user\", \"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: \\n\\n\"}, {\"role\": \"assistant\", \"content\": \"Action: get_snacks\\nAction Input: fruit juice\"}]",
+                "mlflow.spanOutputs": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"content\": \"Action: get_snacks\\nAction Input: fruit juice\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\"}, \"text\": \"Action: get_snacks\\nAction Input: fruit juice\"}]], \"llm_output\": null, \"run\": null, \"type\": \"LLMResult\"}"
+            },
+            "events": [
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166791664,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166839314,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166847421,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166852407,
+                    "attributes": {
+                        "token": " get",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" get\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166853802,
+                    "attributes": {
+                        "token": "_",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"_\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166855502,
+                    "attributes": {
+                        "token": "sn",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"sn\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166856830,
+                    "attributes": {
+                        "token": "acks",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"acks\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166858033,
+                    "attributes": {
+                        "token": "\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166861160,
+                    "attributes": {
+                        "token": "Action",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Action\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166864034,
+                    "attributes": {
+                        "token": " Input",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Input\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166865404,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166867336,
+                    "attributes": {
+                        "token": " fruit",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" fruit\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166869418,
+                    "attributes": {
+                        "token": " juice",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" juice\", \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468166961218,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"usage_metadata\": {\"input_tokens\": 370, \"output_tokens\": 66, \"total_tokens\": 436}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReActSingleInputOutputParser_4",
+            "context": {
+                "span_id": "30b58b3767fc8bc1",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "b2d1b3ce675b5b6b",
+            "start_time": 1749468166970715264,
+            "end_time": 1749468166978509410,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"content\": \"Action: get_snacks\\nAction Input: fruit juice\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--c3bb71bf-3f2b-4fdd-8f11-85cecf1a0704\", \"example\": false, \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 370, \"output_tokens\": 66, \"total_tokens\": 436}, \"tool_call_chunks\": []}",
+                "mlflow.spanOutputs": "{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "get_snacks",
+            "context": {
+                "span_id": "db17f2e890389fe2",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468166986909576,
+            "end_time": 1749468166992441442,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"TOOL\"",
+                "color": "\"green\"",
+                "mlflow.spanInputs": "\"fruit juice\"",
+                "mlflow.spanOutputs": "\"banana\""
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableSequence_6",
+            "context": {
+                "span_id": "70f099950da786be",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "27541c31e005bd9a",
+            "start_time": 1749468167002240438,
+            "end_time": 1749468167455248327,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]]}",
+                "mlflow.spanOutputs": "{\"return_values\": {\"output\": \"I recommend fruit juice and banana for you in Chennai.\"}, \"log\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\", \"type\": \"AgentFinish\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableAssign<agent_scratchpad>_5",
+            "context": {
+                "span_id": "2223f716c9c77160",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "70f099950da786be",
+            "start_time": 1749468167009617041,
+            "end_time": 1749468167026996393,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]]}",
+                "mlflow.spanOutputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableParallel<agent_scratchpad>_5",
+            "context": {
+                "span_id": "1b54c2584d48b45d",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "2223f716c9c77160",
+            "start_time": 1749468167015515927,
+            "end_time": 1749468167025387630,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]]}",
+                "mlflow.spanOutputs": "{\"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \"}"
+            },
+            "events": []
+        },
+        {
+            "name": "RunnableLambda_6",
+            "context": {
+                "span_id": "cc02eed3f1c6e2cd",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "1b54c2584d48b45d",
+            "start_time": 1749468167020926962,
+            "end_time": 1749468167023651689,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]]}",
+                "mlflow.spanOutputs": "\"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \""
+            },
+            "events": []
+        },
+        {
+            "name": "PromptTemplate_5",
+            "context": {
+                "span_id": "b4dc638f92e48d7e",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "70f099950da786be",
+            "start_time": 1749468167029142253,
+            "end_time": 1749468167031454847,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"intermediate_steps\": [[{\"tool\": \"get_weather\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\", \"type\": \"AgentAction\"}, \"It's sunny in chennai!\"], [{\"tool\": \"get_temperature\", \"tool_input\": \"chennai\", \"log\": \"Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\", \"type\": \"AgentAction\"}, 40], [{\"tool\": \"get_drink\", \"tool_input\": \"sunny, 40\", \"log\": \"Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\", \"type\": \"AgentAction\"}, \"fruit juice\"], [{\"tool\": \"get_snacks\", \"tool_input\": \"fruit juice\", \"log\": \"Action: get_snacks\\nAction Input: fruit juice\", \"type\": \"AgentAction\"}, \"banana\"]], \"agent_scratchpad\": \"Thought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \"}",
+                "mlflow.spanOutputs": "{\"text\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \\n\\n\", \"type\": \"StringPromptValue\"}"
+            },
+            "events": []
+        },
+        {
+            "name": "ChatGroq_5",
+            "context": {
+                "span_id": "061be8d968a9c3e4",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "70f099950da786be",
+            "start_time": 1749468167033220589,
+            "end_time": 1749468167449705082,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAT_MODEL\"",
+                "invocation_params": "{\"_type\": \"groq-chat\", \"stop\": [\"\\nObservation\"]}",
+                "options": "{\"stop\": [\"\\nObservation\"]}",
+                "batch_size": "1",
+                "metadata": "{\"ls_provider\": \"groq\", \"ls_model_name\": \"gemma2-9b-it\", \"ls_model_type\": \"chat\", \"ls_temperature\": 0.7, \"ls_stop\": [\"\\nObservation\"]}",
+                "mlflow.spanInputs": "[[{\"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \\n\\n\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": null, \"example\": false}]]",
+                "mlflow.chat.messages": "[{\"role\": \"user\", \"content\": \"\\nAnswer the following questions as best you can. You have access to the following tools:\\n\\nget_weather(city: str) -> str - Get the current weather for a given city\\nget_temperature(city: str) -> int - Get temperature for a given city. The temperature is in celsius\\nget_drink(weather: str, temperature: int = None) -> int - Recommended drink for a perticular weather and temperature\\nget_snacks(drink: str) -> str - Recommended snack based on drink recommendation\\n\\nUse the following format:\\n\\n\\nQuestion: the input question you must answer\\n\\nThought: you should always think about what to do\\n\\nAction: the action to take, should be one of [get_weather, get_temperature, get_drink, get_snacks]\\n\\nAction Input: the input to the action\\n\\nObservation: the result of the action\\n\\n... (this Thought/Action/Action Input/Observation can repeat N times)\\n\\n\\nThought: I now know the final answer\\n\\nFinal Answer: the final answer to the original input question\\n\\nBegin!\\n\\nQuestion: Please Help, I'm in chennai suggest a drink and snacks\\nThought: I need to get the weather and temperature for Chennai to recommend a drink and snacks.\\n\\nAction: get_weather\\nAction Input: chennai\\nObservation: It's sunny in chennai!\\nThought: Thought: I need the temperature to recommend a drink.\\n\\nAction: get_temperature\\nAction Input: chennai\\nObservation: 40\\nThought: Thought: It's sunny and hot in Chennai, so a cold drink would be refreshing. \\n\\nAction: get_drink\\nAction Input: sunny, 40\\nObservation: fruit juice\\nThought: Action: get_snacks\\nAction Input: fruit juice\\nObservation: banana\\nThought: \\n\\n\"}, {\"role\": \"assistant\", \"content\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\"}]",
+                "mlflow.spanOutputs": "{\"generations\": [[{\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"content\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\"}, \"text\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\"}]], \"llm_output\": null, \"run\": null, \"type\": \"LLMResult\"}"
+            },
+            "events": [
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167408448,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167433725,
+                    "attributes": {
+                        "token": "Final",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"Final\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167434899,
+                    "attributes": {
+                        "token": " Answer",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Answer\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167435707,
+                    "attributes": {
+                        "token": ":",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \":\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167436468,
+                    "attributes": {
+                        "token": " I",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" I\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167437206,
+                    "attributes": {
+                        "token": " recommend",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" recommend\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167437927,
+                    "attributes": {
+                        "token": " fruit",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" fruit\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167438797,
+                    "attributes": {
+                        "token": " juice",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" juice\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167439917,
+                    "attributes": {
+                        "token": " and",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" and\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167440817,
+                    "attributes": {
+                        "token": " banana",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" banana\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167441552,
+                    "attributes": {
+                        "token": " for",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" for\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167442492,
+                    "attributes": {
+                        "token": " you",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" you\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167443372,
+                    "attributes": {
+                        "token": " in",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" in\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167444096,
+                    "attributes": {
+                        "token": " Chennai",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" Chennai\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167444808,
+                    "attributes": {
+                        "token": ".",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \".\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167445512,
+                    "attributes": {
+                        "token": " ",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \" \", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167446335,
+                    "attributes": {
+                        "token": "\n",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\\n\", \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                },
+                {
+                    "name": "new_token",
+                    "timestamp": 1749468167448160,
+                    "attributes": {
+                        "token": "",
+                        "chunk": "{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"output\", \"ChatGenerationChunk\"], \"kwargs\": {\"generation_info\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"ChatGenerationChunk\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessageChunk\"], \"kwargs\": {\"content\": \"\", \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"usage_metadata\": {\"input_tokens\": 389, \"output_tokens\": 18, \"total_tokens\": 407}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}}"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ReActSingleInputOutputParser_5",
+            "context": {
+                "span_id": "5e81f8ed6b52caea",
+                "trace_id": "dd0c636d5ab2b2cf615674a5d8e20f17"
+            },
+            "parent_id": "70f099950da786be",
+            "start_time": 1749468167452735980,
+            "end_time": 1749468167454514969,
+            "status_code": "OK",
+            "status_message": "",
+            "attributes": {
+                "mlflow.traceRequestId": "\"11444e4a293e4079bfe19a66fbae8afb\"",
+                "mlflow.spanType": "\"CHAIN\"",
+                "mlflow.spanInputs": "{\"content\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\", \"additional_kwargs\": {}, \"response_metadata\": {\"finish_reason\": \"stop\", \"model_name\": \"gemma2-9b-it\", \"system_fingerprint\": \"fp_10c08bf97d\"}, \"type\": \"AIMessageChunk\", \"name\": null, \"id\": \"run--2ddde4e4-11d2-43a6-92b2-4ec97bb19322\", \"example\": false, \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 389, \"output_tokens\": 18, \"total_tokens\": 407}, \"tool_call_chunks\": []}",
+                "mlflow.spanOutputs": "{\"return_values\": {\"output\": \"I recommend fruit juice and banana for you in Chennai.\"}, \"log\": \"Final Answer: I recommend fruit juice and banana for you in Chennai. \\n\", \"type\": \"AgentFinish\"}"
+            },
+            "events": []
+        }
+    ],
+    "request": "\"I'm in chennai suggest a drink and snacks\"",
+    "response": "{\"input\": \"Please Help, I'm in chennai suggest a drink and snacks\", \"output\": \"I recommend fruit juice and banana for you in Chennai.\"}"
+}
